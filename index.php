@@ -19,6 +19,6 @@ if (DEBUGE){
 }
 require_once ('core/vei.php');
 
-//require ('core/route.php');
+//require_once ('core/app/controller/')
 spl_autoload_register('\core\vei::load');
 \core\vei::run();

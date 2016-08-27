@@ -11,6 +11,16 @@ class vei{
     public static $classMap=array();
     static public function run(){
         $route=new \core\lib\route();
+        $ctrclass=$route->contrl;
+        $mtd=$route->method;
+        if (is_file('core/app/controller/'.$ctrclass.'Controller.class.php')){
+            include 'core/app/controller/'.$ctrclass.'Controller.class.php';
+            $ctrclass='app\controller\\'.$ctrclass.'Controller';
+            $ctr=new $ctrclass();
+            $ctr->$mtd();
+        }else{
+            throw new \Exception('找不到控制器',$ctrclass);
+        }
         var_dump($route);
         var_dump($_GET);
     }
