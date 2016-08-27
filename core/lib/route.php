@@ -11,14 +11,36 @@ class route{
     public $method;
     function __construct()
     {
-        
-        $urlpath=trim($_SERVER["REDIRECT_URL"],'/');
-        if (!$urlpath){
-            explode('/',$urlpath);
-        }else{
-            $this->contrl='index';
-            $this->method='index';
+        echo '<pre>';
+        if (isset($_SERVER["REDIRECT_URL"])&&$_SERVER["REDIRECT_URL"]!='/'){
+            $urlpath=trim($_SERVER["REDIRECT_URL"],'/');
+            if ($urlpath){
+                $patharr=explode('/',$urlpath);
+                if(isset($patharr[0])){
+                    $this->contrl=$patharr[0];
+                }
+                unset($patharr[0]);
+                if (isset($patharr[1])){
+                    $this->method=$patharr[1];
+                    unset($patharr[1]);
+                }else{
+                    $this->method='index';
+                }
+                $count=count($patharr)+2;
+                $i=2;
+                while($i<$count){
+                    if(isset($patharr[$i+1])){
+                        $_GET[$patharr[$i]]=$patharr[$i+1];
+                    }
+                    $i=$i+2;
+                }
+
+            }else{
+                $this->contrl='index';
+                $this->method='index';
+            }
         }
+
 
     }
 }

@@ -12,6 +12,7 @@ class vei{
     static public function run(){
         $route=new \core\lib\route();
         var_dump($route);
+        var_dump($_GET);
     }
     static public function load($class){
         //自动加载类库
@@ -24,7 +25,6 @@ class vei{
             if (is_file($file)){
                 include ($file);
                 self::$classMap[$class]=$class;
-
             }else{
                 return false;
             }
