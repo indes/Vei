@@ -7,8 +7,7 @@
  */
 
 $dbconfig=array(
-    'dbtype'=>'medoo',
-    'dbcon'=>[
+    'dbconfig'=>[
         'database_type' => 'mysql',
         'database_name' => 'vei',
         'server' => 'localhost',

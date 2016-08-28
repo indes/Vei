@@ -12,7 +12,27 @@ class vei{
 
     public static $classMap=array();
     static public function run(){
-//        session_start();
+        session_start();
+
+        //引入必要文件
+        require_once ('/vendor/autoload.php');
+        require_once ('lib/DB.class.php');
+        require_once ('lib/VIEW.class.php');
+
+        //类初始化
+        \DB::init();
+        \VIEW::init();
+
+
+        if (DEBUGE){
+            //开启debug模式
+            ini_set('display_errors','on');
+            $whoops = new \Whoops\Run;
+            $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
+            $whoops->register();
+        }else{
+            ini_set('display_errors','off');
+        }
 
         $route=new \core\lib\route();
         $ctrclass=$route->contrl;

@@ -12,10 +12,6 @@ class VIEW
 {
     static public $view;
     static function init(){
-//        require ('config.php');
-//        dump(core\lib\$config);
-//        self::$view=new $view$config['viewtype'];
-
         self::$view=new Smarty();
         self::$view->left_delimiter='{';
         self::$view->right_delimiter='}';

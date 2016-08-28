@@ -13,7 +13,7 @@ class DB
     static function init(){
 
         require_once ('core/app/config/database.php');
-        $database = new $dbconfig['dbtype']($dbconfig['dbcon']);
+        $database = new medoo($dbconfig['dbconfig']);
         self::$db=$database;
     }
     static function select($table, $columns, $where=''){

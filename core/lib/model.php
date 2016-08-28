@@ -8,7 +8,7 @@
 
 namespace core\lib;
 
-class model extends \medoo
+class model
 {
 
 }

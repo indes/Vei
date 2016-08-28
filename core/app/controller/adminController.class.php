@@ -12,10 +12,7 @@ namespace app\controller;
 class adminController
 {
     public function index(){
-        dump($_SESSION);
     }
     public function login(){
-//        dump("这里是登陆界面");
-        $_SESSION["h"]=123;
     }
 }
