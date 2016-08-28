@@ -8,4 +8,9 @@
 
 namespace core\lib;
 
+$config=array(
+    "dbtype"=>"medoo",
+    "viewtype"=>"smarty",
+);
+
 

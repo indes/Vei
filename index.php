@@ -10,10 +10,13 @@
  */
 require_once ('vendor/autoload.php');
 require_once ('core/lib/DB.class.php');
+require_once ('core/lib/VIEW.class.php');
+require_once ('core/lib/config.php');
 
-\core\lib\DB::init();
-dump(\core\lib\DB::select('user','*'));
+DB::init();
+VIEW::init();
 
+VIEW::display('index.tpl');
 
 define('VEI',realpath(__DIR__));
 define('CORE',VEI.'/core');

@@ -6,14 +6,13 @@
  * Date: 2016-08-28
  * Time: 14:15
  */
-namespace core\lib;
 
 class DB
 {
     static public $db;
     static function init(){
+
         require_once ('core/app/config/database.php');
-        dump($dbconfig['dbcon']);
         $database = new $dbconfig['dbtype']($dbconfig['dbcon']);
         self::$db=$database;
     }
