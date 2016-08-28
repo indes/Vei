@@ -8,6 +8,6 @@
     <title>Vei!</title>
 </head>
 <body>
-Hi! Vei
+<h1>Hi! Vei</h1>
 </body>
 </html>

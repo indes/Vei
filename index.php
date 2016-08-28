@@ -15,9 +15,6 @@ require_once ('core/lib/config.php');
 
 DB::init();
 VIEW::init();
-
-VIEW::display('index.tpl');
-
 define('VEI',realpath(__DIR__));
 define('CORE',VEI.'/core');
 define('APP',VEI.'/app');

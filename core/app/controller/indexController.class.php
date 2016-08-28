@@ -10,11 +10,9 @@ namespace app\controller;
 class indexController
 {
     public function index(){
-        echo "这里是index";
-
+        \VIEW::display('index.tpl');
     }
-    public function __construct()
-    {
-        echo '123';
+    public function __construct(){
+
     }
 }
