@@ -6,13 +6,17 @@
  * Time: 19:37
  */
 namespace core;
+use core\lib\model;
+
 class vei{
 
     public static $classMap=array();
     static public function run(){
+//        session_start();
         $route=new \core\lib\route();
         $ctrclass=$route->contrl;
         $mtd=$route->method;
+//        dump($route);
         if (is_file('core/app/controller/'.$ctrclass.'Controller.class.php')){
             include 'core/app/controller/'.$ctrclass.'Controller.class.php';
             $ctrclass='app\controller\\'.$ctrclass.'Controller';
@@ -21,8 +25,16 @@ class vei{
         }else{
             throw new \Exception('找不到控制器',$ctrclass);
         }
-        var_dump($route);
-        var_dump($_GET);
+        include "core/lib/model.php";
+        $dsn = 'mysql:dbname=vei;host=127.0.0.1';
+        $username = 'root';
+        $passwd = 'root';
+//        $sq=new model($dsn,$username,$passwd);
+//        $sql='select * from user';
+//        $res=$sq->query($sql);
+//        dump($res->fetchAll());
+
+
     }
     static public function load($class){
         //自动加载类库

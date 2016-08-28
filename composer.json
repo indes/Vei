@@ -1,0 +1,11 @@
+{
+  "name":"Vei",
+  "description":"PHP Framework",
+  "require":{
+    "php":">=5.3.0",
+    "filp/whoops":"*",
+    "symfony/var-dumper":"*",
+    "catfan/medoo":"*",
+    "smarty/smarty":"*"
+  }
+}

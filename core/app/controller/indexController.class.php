@@ -11,6 +11,7 @@ class indexController
 {
     public function index(){
         echo "这里是index";
+
     }
     public function __construct()
     {

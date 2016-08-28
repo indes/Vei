@@ -42,8 +42,9 @@ class route{
                 $this->contrl='index';
                 $this->method='index';
             }
+        }else{
+            $this->contrl='index';
+            $this->method='index';
         }
-
-
     }
 }
